@@ -8,6 +8,7 @@ import { QuizOption } from '@/components/QuizOption';
 import { quizQuestions, archetypes, levels } from '@/data/quizData';
 import { QuizAnswers, QuizResult } from '@/types/quiz';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 export const Quiz = () => {
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ export const Quiz = () => {
     return archetypes.find(arch => arch.key === selectedArchetype);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const score = calculateScore();
     const level = getLevel(score);
     const archetype = getArchetype();
@@ -80,8 +81,33 @@ export const Quiz = () => {
       email
     };
 
-    // Store in sessionStorage
+    // Store in sessionStorage for immediate results page access
     sessionStorage.setItem('maiven_quiz_result', JSON.stringify(result));
+
+    // Save to Supabase database
+    try {
+      const { error } = await supabase
+        .from('quiz_results')
+        .insert({
+          email,
+          score,
+          level_id: level.id,
+          level_name: level.name,
+          level_title: level.title,
+          level_blurb: level.blurb,
+          level_hub_url: level.hubUrl,
+          archetype_key: archetype.key,
+          archetype_label: archetype.label,
+          archetype_body: archetype.body,
+          answers: answers
+        });
+
+      if (error) {
+        console.error('Error saving quiz result to database:', error);
+      }
+    } catch (error) {
+      console.error('Database save failed:', error);
+    }
 
     // Optional: Send to webhook for analytics
     try {

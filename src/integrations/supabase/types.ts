@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      quiz_results: {
+        Row: {
+          answers: Json
+          archetype_body: string
+          archetype_key: string
+          archetype_label: string
+          created_at: string
+          email: string
+          id: string
+          level_blurb: string
+          level_hub_url: string
+          level_id: number
+          level_name: string
+          level_title: string
+          score: number
+          updated_at: string
+        }
+        Insert: {
+          answers: Json
+          archetype_body: string
+          archetype_key: string
+          archetype_label: string
+          created_at?: string
+          email: string
+          id?: string
+          level_blurb: string
+          level_hub_url: string
+          level_id: number
+          level_name: string
+          level_title: string
+          score: number
+          updated_at?: string
+        }
+        Update: {
+          answers?: Json
+          archetype_body?: string
+          archetype_key?: string
+          archetype_label?: string
+          created_at?: string
+          email?: string
+          id?: string
+          level_blurb?: string
+          level_hub_url?: string
+          level_id?: number
+          level_name?: string
+          level_title?: string
+          score?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
