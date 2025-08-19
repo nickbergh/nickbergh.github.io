@@ -157,7 +157,7 @@ const Results = () => {
             <div className="text-center">
               <Button variant="outline" asChild>
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                  View All Community Events
+                  Join the Community to Access the Events
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </Button>
