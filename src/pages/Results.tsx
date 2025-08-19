@@ -11,6 +11,9 @@ const Results = () => {
   const [result, setResult] = useState<QuizResult | null>(null);
   const { events, loading: eventsLoading, error: eventsError } = useCircleEvents();
 
+  // Debug logging
+  console.log('Events debug:', { events, eventsLoading, eventsError, eventsLength: events.length });
+
   useEffect(() => {
     const storedResult = sessionStorage.getItem('maiven_quiz_result');
     if (storedResult) {
