@@ -153,9 +153,9 @@
     transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Quiz option cards */
+  /* Quiz option cards - lighter background */
   .quiz-option {
-    background: hsl(var(--card));
+    background: #fdfdfd; /* Very light background */
     border: 1px solid hsl(var(--border)); /* Consistent thin border */
     transition: var(--transition-smooth);
     cursor: pointer;
