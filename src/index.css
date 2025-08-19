@@ -165,7 +165,7 @@
   }
 
   .quiz-option.selected {
-    border-color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary)); /* Super thin border */
     background: #EEB29A; /* Peach brand color */
     box-shadow: var(--shadow-primary);
   }
