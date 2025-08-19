@@ -129,10 +129,10 @@
     background: var(--gradient-hero);
   }
 
-  /* Card with clean styling - no shadows */
+  /* Card with clean styling - white background with custom border */
   .card-elevated {
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
+    background: #ffffff; /* White background */
+    border: 1px solid #EDDDFE; /* Custom border color */
     transition: var(--transition-smooth);
   }
 
