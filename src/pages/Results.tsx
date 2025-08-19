@@ -4,9 +4,12 @@ import { Button } from '@/components/ui/button';
 import { QuizResult } from '@/types/quiz';
 import { levels, archetypes, momentumText } from '@/data/quizData';
 import { ArrowRight, RotateCcw } from 'lucide-react';
+import { useCircleEvents } from '@/hooks/useCircleEvents';
+import EventCard from '@/components/EventCard';
 
 const Results = () => {
   const [result, setResult] = useState<QuizResult | null>(null);
+  const { events, loading: eventsLoading, error: eventsError } = useCircleEvents();
 
   useEffect(() => {
     const storedResult = sessionStorage.getItem('maiven_quiz_result');
@@ -131,6 +134,48 @@ const Results = () => {
             </Button>
           </div>
         </div>
+
+        {/* Upcoming Community Events */}
+        {events.length > 0 && (
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                Upcoming Community Events
+              </h3>
+              <p className="text-muted-foreground">
+                Join your fellow AI enthusiasts at these exclusive events
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              {events.map((event) => (
+                <EventCard key={event.id} event={event} />
+              ))}
+            </div>
+            <div className="text-center">
+              <Button variant="outline" asChild>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  View All Community Events
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        )}
+
+        {eventsLoading && (
+          <div className="mt-16 text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
+            <p className="text-muted-foreground mt-2">Loading upcoming events...</p>
+          </div>
+        )}
+
+        {eventsError && (
+          <div className="mt-16 text-center">
+            <p className="text-muted-foreground">
+              Unable to load community events at this time.
+            </p>
+          </div>
+        )}
 
         {/* Additional Info */}
         <div className="mt-16 text-center">

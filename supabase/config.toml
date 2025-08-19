@@ -1,1 +1,4 @@
 project_id = "mnfuhzczviyrutrhrvan"
+
+[functions.fetch-circle-events]
+verify_jwt = false
