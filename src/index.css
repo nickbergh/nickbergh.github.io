@@ -6,52 +6,54 @@
 
 @layer base {
   :root {
-    /* Base colors - Clean, modern foundation */
-    --background: 250 100% 98%;
-    --foreground: 240 10% 15%;
+    /* Maiven Brand Colors - Based on brand guidelines */
+    --background: 46 71% 96%; /* Soft White #FBF7EE */
+    --foreground: 196 100% 13%; /* Deep #003242 */
 
-    /* Card system with subtle depth */
+    /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 15%;
+    --card-foreground: 196 100% 13%;
 
     /* Interactive surfaces */
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 15%;
+    --popover-foreground: 196 100% 13%;
 
-    /* Brand colors - Purple-blue gradient system */
-    --primary: 260 85% 65%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 260 85% 60%;
-    --primary-light: 260 85% 85%;
+    /* Primary brand color - Deep */
+    --primary: 196 100% 13%; /* Deep #003242 */
+    --primary-foreground: 46 71% 96%; /* Soft White text on Deep */
+    --primary-hover: 196 100% 18%;
+    --primary-light: 196 50% 85%;
 
-    /* Secondary brand colors */
-    --secondary: 245 60% 95%;
-    --secondary-foreground: 260 85% 45%;
-    --secondary-hover: 245 60% 90%;
+    /* Secondary brand colors - Lavender for buttons */
+    --secondary: 291 73% 85%; /* Lavender #E5C0ED */
+    --secondary-foreground: 196 100% 13%; /* Deep text on Lavender */
+    --secondary-hover: 291 73% 80%;
+
+    /* Accent - Violet for CTAs */
+    --accent: 260 35% 52%; /* Violet #755BAB */
+    --accent-foreground: 46 71% 96%;
 
     /* Neutral palette */
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 5% 55%;
+    --muted: 46 20% 92%;
+    --muted-foreground: 196 30% 35%;
 
-    --accent: 260 85% 95%;
-    --accent-foreground: 260 85% 45%;
-
-    /* Status colors */
+    /* Status colors with brand alignment */
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
-    --warning: 38 92% 50%;
+    --warning: 21 87% 55%; /* Tang #EB6A2E */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     /* Interface elements */
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 260 85% 65%;
+    --border: 46 20% 88%;
+    --input: 46 20% 88%;
+    --ring: 260 35% 52%;
 
-    /* Gradients - Core brand identity */
-    --gradient-primary: linear-gradient(135deg, hsl(260, 85%, 65%), hsl(245, 80%, 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(245, 60%, 95%), hsl(240, 50%, 98%));
-    --gradient-accent: linear-gradient(90deg, hsl(260, 85%, 85%), hsl(245, 80%, 88%));
+    /* Brand gradients matching website */
+    --gradient-primary: linear-gradient(135deg, hsl(260, 35%, 52%), hsl(196, 100%, 13%));
+    --gradient-secondary: linear-gradient(135deg, hsl(291, 73%, 85%), hsl(46, 71%, 96%));
+    --gradient-accent: linear-gradient(90deg, hsl(291, 73%, 85%), hsl(260, 35%, 52%));
+    --gradient-hero: linear-gradient(135deg, hsl(260, 35%, 52%), hsl(196, 100%, 25%));
 
     /* Shadows for depth */
     --shadow-sm: 0 1px 3px 0 hsl(240 10% 15% / 0.1);
@@ -67,40 +69,40 @@
   }
 
   .dark {
-    /* Dark mode colors */
-    --background: 240 10% 8%;
-    --foreground: 250 100% 98%;
+    /* Dark mode with Maiven brand colors */
+    --background: 196 100% 8%;
+    --foreground: 46 71% 96%;
 
-    --card: 240 10% 12%;
-    --card-foreground: 250 100% 98%;
+    --card: 196 50% 12%;
+    --card-foreground: 46 71% 96%;
 
-    --popover: 240 10% 12%;
-    --popover-foreground: 250 100% 98%;
+    --popover: 196 50% 12%;
+    --popover-foreground: 46 71% 96%;
 
-    --primary: 260 85% 70%;
-    --primary-foreground: 240 10% 8%;
-    --primary-hover: 260 85% 65%;
-    --primary-light: 260 85% 85%;
+    --primary: 260 35% 65%;
+    --primary-foreground: 196 100% 8%;
+    --primary-hover: 260 35% 60%;
+    --primary-light: 260 35% 85%;
 
-    --secondary: 240 8% 15%;
-    --secondary-foreground: 250 100% 98%;
-    --secondary-hover: 240 8% 18%;
+    --secondary: 291 40% 20%;
+    --secondary-foreground: 46 71% 96%;
+    --secondary-hover: 291 40% 25%;
 
-    --muted: 240 8% 15%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 196 30% 15%;
+    --muted-foreground: 46 20% 65%;
 
-    --accent: 240 8% 20%;
-    --accent-foreground: 260 85% 70%;
+    --accent: 260 35% 65%;
+    --accent-foreground: 196 100% 8%;
 
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
-    --warning: 38 92% 50%;
+    --warning: 21 87% 55%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 8% 20%;
-    --input: 240 8% 20%;
-    --ring: 260 85% 70%;
+    --border: 196 30% 20%;
+    --input: 196 30% 20%;
+    --ring: 260 35% 65%;
   }
 }
 
@@ -117,9 +119,9 @@
 
 /* Custom Component Classes */
 @layer components {
-  /* Hero gradient background */
+  /* Hero gradient background - matches website */
   .hero-gradient {
-    background: var(--gradient-primary);
+    background: var(--gradient-hero);
   }
 
   /* Card with elegant shadow */
@@ -168,16 +170,17 @@
     box-shadow: var(--shadow-primary);
   }
 
-  /* Button variants */
+  /* Button variants - Maiven brand style */
   .btn-gradient {
-    background: var(--gradient-primary);
-    color: hsl(var(--primary-foreground));
+    background: var(--gradient-accent);
+    color: hsl(var(--primary));
     border: none;
+    border-radius: 9999px; /* Fully rounded per brand guidelines */
     transition: var(--transition-smooth);
   }
 
   .btn-gradient:hover {
-    background: linear-gradient(135deg, hsl(260, 85%, 60%), hsl(245, 80%, 65%));
+    background: linear-gradient(90deg, hsl(291, 73%, 80%), hsl(260, 35%, 47%));
     box-shadow: var(--shadow-primary);
     transform: translateY(-1px);
   }
