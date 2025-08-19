@@ -6,16 +6,16 @@
 
 @layer base {
   :root {
-    /* Maiven Brand Colors - Based on brand guidelines */
-    --background: 46 71% 96%; /* Soft White #FBF7EE */
+    /* Maiven Brand Colors - Updated backgrounds */
+    --background: 0 0% 100%; /* Pure white #ffffff */
     --foreground: 196 100% 13%; /* Deep #003242 */
 
-    /* Card system */
-    --card: 0 0% 100%;
+    /* Card system - soft white backgrounds */
+    --card: 46 71% 96%; /* Soft White #FBF7EE */
     --card-foreground: 196 100% 13%;
 
     /* Interactive surfaces */
-    --popover: 0 0% 100%;
+    --popover: 46 71% 96%; /* Soft White #FBF7EE */
     --popover-foreground: 196 100% 13%;
 
     /* Primary brand color - Deep */
@@ -69,14 +69,14 @@
   }
 
   .dark {
-    /* Dark mode with Maiven brand colors */
-    --background: 196 100% 8%;
+    /* Dark mode with updated backgrounds */
+    --background: 0 0% 5%; /* Pure dark background */
     --foreground: 46 71% 96%;
 
-    --card: 196 50% 12%;
+    --card: 196 50% 8%; /* Dark card background */
     --card-foreground: 46 71% 96%;
 
-    --popover: 196 50% 12%;
+    --popover: 196 50% 8%; /* Dark popover background */
     --popover-foreground: 46 71% 96%;
 
     --primary: 260 35% 65%;
