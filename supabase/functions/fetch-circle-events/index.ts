@@ -58,52 +58,75 @@ serve(async (req) => {
     console.log('Fetching events from Circle API...');
     console.log('Using Circle API token:', circleApiToken ? 'Token present' : 'Token missing');
 
-    // Try multiple Circle API endpoints and authentication methods
+    // Try Circle API endpoints with proper authentication
     const endpoints = [
-      'https://api-headless.circle.so/admin/events',
-      'https://app.circle.so/api/v1/events',
-      'https://api.circle.so/v1/events'
+      {
+        url: 'https://app.circle.so/api/v1/events',
+        authHeader: `Token ${circleApiToken}`
+      },
+      {
+        url: 'https://api-headless.circle.so/admin/events', 
+        authHeader: `Bearer ${circleApiToken}`
+      },
+      {
+        url: 'https://api-v1.circle.so/events',
+        authHeader: `Token ${circleApiToken}`
+      }
     ];
 
     let lastError = null;
     let data = null;
 
-    for (const endpoint of endpoints) {
+    for (const { url, authHeader } of endpoints) {
       try {
-        console.log(`Trying endpoint: ${endpoint}`);
+        console.log(`Trying endpoint: ${url} with auth format: ${authHeader.split(' ')[0]}`);
         
-        const response = await fetch(endpoint, {
+        const response = await fetch(url, {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${circleApiToken}`,
+            'Authorization': authHeader,
             'Content-Type': 'application/json',
+            'Accept': 'application/json'
           },
         });
 
-        console.log(`Response status: ${response.status}`);
+        console.log(`Response status for ${url}: ${response.status}`);
         console.log(`Response headers:`, Object.fromEntries(response.headers.entries()));
 
         if (!response.ok) {
           const errorText = await response.text();
-          console.error(`Circle API error for ${endpoint}:`, response.status, response.statusText, errorText);
+          console.error(`Circle API error for ${url}:`, response.status, response.statusText, errorText);
           lastError = new Error(`Circle API error: ${response.status} - ${errorText}`);
           continue;
         }
 
         const responseText = await response.text();
-        console.log(`Raw response from ${endpoint}:`, responseText);
+        console.log(`Raw response from ${url}:`, responseText.substring(0, 500));
 
         try {
-          data = JSON.parse(responseText);
-          console.log(`Parsed response from ${endpoint}:`, data);
+          const parsedData = JSON.parse(responseText);
+          console.log(`Successfully parsed response from ${url}:`, Object.keys(parsedData));
+          
+          // Handle different possible response formats
+          if (Array.isArray(parsedData)) {
+            data = { events: parsedData };
+          } else if (parsedData.events) {
+            data = parsedData;
+          } else if (parsedData.data?.events) {
+            data = { events: parsedData.data.events };
+          } else {
+            data = parsedData;
+          }
+          
+          console.log(`Processed data structure:`, data);
           break; // Success, exit the loop
         } catch (parseError) {
-          console.error(`JSON parse error for ${endpoint}:`, parseError);
+          console.error(`JSON parse error for ${url}:`, parseError);
           lastError = new Error(`JSON parse error: ${parseError.message}`);
           continue;
         }
       } catch (fetchError) {
-        console.error(`Fetch error for ${endpoint}:`, fetchError);
+        console.error(`Fetch error for ${url}:`, fetchError);
         lastError = fetchError;
         continue;
       }
