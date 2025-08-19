@@ -199,6 +199,6 @@
 
   .momentum-text {
     background: #FBF7EE; /* Soft White brand color */
-    border-left: 4px solid hsl(var(--primary));
+    border-left: 4px solid #755BAB; /* Violet brand color */
   }
 }
