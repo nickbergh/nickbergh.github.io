@@ -124,16 +124,14 @@
     background: var(--gradient-hero);
   }
 
-  /* Card with elegant shadow */
+  /* Card with clean styling - no shadows */
   .card-elevated {
     background: hsl(var(--card));
-    box-shadow: var(--shadow-md);
     border: 1px solid hsl(var(--border));
     transition: var(--transition-smooth);
   }
 
   .card-elevated:hover {
-    box-shadow: var(--shadow-lg);
     transform: translateY(-1px);
   }
 
@@ -168,7 +166,7 @@
     background: #EEB29A; /* Peach brand color */
   }
 
-  /* Button variants - Maiven brand style */
+  /* Button variants - clean style without shadows */
   .btn-gradient {
     background: var(--gradient-accent);
     color: hsl(var(--primary));
@@ -179,7 +177,6 @@
 
   .btn-gradient:hover {
     background: linear-gradient(90deg, hsl(291, 73%, 80%), hsl(260, 35%, 47%));
-    box-shadow: var(--shadow-primary);
     transform: translateY(-1px);
   }
 
