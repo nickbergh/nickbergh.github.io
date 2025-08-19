@@ -130,7 +130,7 @@ export const Quiz = () => {
       return (
         <div className="space-y-6">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
+        <h2 className="text-2xl font-medium text-foreground mb-4">
               {question.question}
             </h2>
           </div>
