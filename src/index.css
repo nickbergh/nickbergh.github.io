@@ -186,14 +186,14 @@
     transform: none;
   }
 
-  /* Results page styles */
+  /* Results page styles - no gradients */
   .result-card {
-    background: var(--gradient-secondary);
+    background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
   }
 
   .momentum-text {
-    background: var(--gradient-accent);
+    background: hsl(var(--secondary));
     border-left: 4px solid hsl(var(--primary));
   }
 }

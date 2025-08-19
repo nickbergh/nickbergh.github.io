@@ -70,7 +70,7 @@ const Results = () => {
           {/* Level Results */}
           <div className="result-card p-8 rounded-xl">
             <div className="text-center mb-6">
-              <div className="hero-gradient w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-accent w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-primary-foreground">
                   {result.levelId}
                 </span>
@@ -108,7 +108,7 @@ const Results = () => {
           <Button 
             id="level-cta"
             asChild
-            className="btn-gradient text-lg px-8 py-6 rounded-xl"
+            className="bg-secondary text-secondary-foreground hover:bg-secondary-hover border-0 rounded-full text-lg px-8 py-6"
           >
             <a href={result.levelHubUrl}>
               Explore your {result.levelTitle} hub
