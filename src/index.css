@@ -24,8 +24,8 @@
     --primary-hover: 196 100% 18%;
     --primary-light: 196 50% 85%;
 
-    /* Secondary brand colors - 100% opacity */
-    --secondary: 291 38% 91%; /* #EDDDFE at 100% opacity */
+    /* Secondary brand colors - Darker button color */
+    --secondary: 288 42% 85%; /* #E0C4F0 - darker shade */
     --secondary-foreground: 196 100% 13%; /* Deep text on buttons */
     --secondary-hover: 72 71% 76%; /* #E3F28B hover color */
 
@@ -171,9 +171,9 @@
     background: #EEB29A; /* Peach brand color */
   }
 
-  /* Button variants - 100% opacity with lime hover */
+  /* Button variants - Slightly darker button color */
   .btn-gradient {
-    background: #EDDDFE; /* Button color at 100% opacity */
+    background: #E0C4F0; /* Darker shade of the button color */
     color: hsl(var(--primary));
     border: none;
     border-radius: 9999px; /* Fully rounded per brand guidelines */
