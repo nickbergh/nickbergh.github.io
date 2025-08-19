@@ -21,6 +21,8 @@ export default {
 			fontFamily: {
 				'sans': ['Poppins', 'system-ui', 'sans-serif'],
 				'poppins': ['Poppins', 'sans-serif'],
+				'heading': ['A2 Standard Text', 'Lora', 'serif'], // Brand heading font with fallback
+				'lora': ['Lora', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
