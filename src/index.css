@@ -166,7 +166,7 @@
 
   .quiz-option.selected {
     border-color: hsl(var(--primary));
-    background: hsl(var(--accent));
+    background: #EEB29A; /* Peach brand color */
     box-shadow: var(--shadow-primary);
   }
 
