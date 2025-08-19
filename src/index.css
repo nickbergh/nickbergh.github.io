@@ -24,10 +24,10 @@
     --primary-hover: 196 100% 18%;
     --primary-light: 196 50% 85%;
 
-    /* Secondary brand colors - Lavender for buttons */
-    --secondary: 291 73% 85%; /* Lavender #E5C0ED */
-    --secondary-foreground: 196 100% 13%; /* Deep text on Lavender */
-    --secondary-hover: 291 73% 80%;
+    /* Secondary brand colors - Updated button color */
+    --secondary: 291 38% 91%; /* Updated to #EDDDFE */
+    --secondary-foreground: 196 100% 13%; /* Deep text on buttons */
+    --secondary-hover: 291 38% 85%;
 
     /* Accent - Violet for CTAs */
     --accent: 260 35% 52%; /* Violet #755BAB */
@@ -171,9 +171,9 @@
     background: #EEB29A; /* Peach brand color */
   }
 
-  /* Button variants - clean style without shadows */
+  /* Button variants - Updated button color */
   .btn-gradient {
-    background: var(--gradient-accent);
+    background: #EDDDFE; /* Updated button color */
     color: hsl(var(--primary));
     border: none;
     border-radius: 9999px; /* Fully rounded per brand guidelines */
@@ -181,7 +181,7 @@
   }
 
   .btn-gradient:hover {
-    background: linear-gradient(90deg, hsl(291, 73%, 80%), hsl(260, 35%, 47%));
+    background: #E8D2F9; /* Slightly darker on hover */
     transform: translateY(-1px);
   }
 
