@@ -29,12 +29,13 @@ serve(async (req) => {
     }
 
     console.log('Fetching events from Circle API...');
+    console.log('Using Circle API token:', circleApiToken ? 'Token present' : 'Token missing');
 
-    // Fetch events from Circle API
-    const response = await fetch('https://app.circle.so/api/v1/events', {
+    // Fetch events from Circle API using correct endpoint and auth format
+    const response = await fetch('https://api-headless.circle.so/admin/events', {
       method: 'GET',
       headers: {
-        'Authorization': `Token ${circleApiToken}`,
+        'Authorization': `Bearer ${circleApiToken}`,
         'Content-Type': 'application/json',
       },
     });
