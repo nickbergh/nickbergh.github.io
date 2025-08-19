@@ -59,7 +59,7 @@ const Results = () => {
             {result.levelName}: {result.levelTitle}
           </h1>
           <div className="momentum-text p-6 rounded-lg mx-auto max-w-2xl">
-            <p className="text-lg text-foreground italic">
+            <p className="text-lg text-foreground">
               {momentumText}
             </p>
           </div>
