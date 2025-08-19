@@ -232,7 +232,7 @@ export const Quiz = () => {
           <Button
             onClick={handleNext}
             disabled={!canProceed}
-            className="btn-gradient flex items-center gap-2"
+            className="bg-secondary text-secondary-foreground hover:bg-secondary-hover border-0 rounded-full flex items-center gap-2"
           >
             {isEmailStep ? 'Get Results' : 'Next'}
             {!isEmailStep && <ChevronRight className="w-4 h-4" />}
