@@ -160,14 +160,12 @@
 
   .quiz-option:hover {
     border-color: hsl(var(--primary));
-    box-shadow: var(--shadow-primary);
     transform: translateY(-1px);
   }
 
   .quiz-option.selected {
     border: 1px solid hsl(var(--primary)); /* Super thin border */
     background: #EEB29A; /* Peach brand color */
-    box-shadow: var(--shadow-primary);
   }
 
   /* Button variants - Maiven brand style */
