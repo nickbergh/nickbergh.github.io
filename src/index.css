@@ -32,8 +32,8 @@
     /* Accent - Violet for CTAs */
     --accent: 260 35% 52%; /* Violet #755BAB */
     --accent-foreground: 46 71% 96%;
-    --level-badge: 190 100% 10%; /* #002833 */
-    --level-badge-foreground: 59 100% 76%; /* #F1F493 */
+    --level-badge: 193 100% 10%; /* #002833 */
+    --level-badge-foreground: 62 85% 77%; /* #F1F493 */
 
     /* Neutral palette */
     --muted: 46 20% 92%;
