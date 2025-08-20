@@ -131,7 +131,7 @@ const Results = () => {
               {result.levelBlurb.split('\n').map((line, index) => {
                 if (line.trim().startsWith('•')) {
                   return (
-                    <div key={index} className="flex items-start justify-center mb-2">
+                    <div key={index} className="flex items-start justify-start mb-2">
                       <span className="mr-2">•</span>
                       <span className="text-left">{line.trim().substring(1).trim()}</span>
                     </div>
