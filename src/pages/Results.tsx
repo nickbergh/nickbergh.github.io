@@ -106,8 +106,8 @@ const Results = () => {
           {/* Level Results */}
           <div className="result-card p-8 rounded-xl">
             <div className="text-center mb-6">
-              <div className="bg-accent w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-primary-foreground">
+              <div className="bg-level-badge w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-level-badge-foreground">
                   {result.levelId}
                 </span>
               </div>
