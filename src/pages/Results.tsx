@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
 import { QuizResult } from '@/types/quiz';
 import { levels, archetypes, momentumText } from '@/data/quizData';
 import { ArrowRight, RotateCcw } from 'lucide-react';
@@ -10,6 +11,22 @@ import EventCard from '@/components/EventCard';
 const Results = () => {
   const [result, setResult] = useState<QuizResult | null>(null);
   const { events, loading: eventsLoading, error: eventsError } = useCircleEvents();
+
+  // Calculate progress to next level
+  const calculateProgressToNextLevel = (score: number, currentLevelId: number) => {
+    const currentLevel = levels.find(level => level.id === currentLevelId);
+    const nextLevel = levels.find(level => level.id === currentLevelId + 1);
+    
+    if (!currentLevel || !nextLevel) {
+      // If at max level, show 100% completion
+      return 100;
+    }
+    
+    const progressInCurrentLevel = score - currentLevel.minScore;
+    const totalPointsToNextLevel = nextLevel.minScore - currentLevel.minScore;
+    
+    return Math.min(100, Math.max(0, (progressInCurrentLevel / totalPointsToNextLevel) * 100));
+  };
 
   // Debug logging
   console.log('Events debug:', { events, eventsLoading, eventsError, eventsLength: events.length });
@@ -86,6 +103,16 @@ const Results = () => {
               </h2>
               <div className="text-sm text-muted-foreground mb-4">
                 Score: <span id="score" className="font-semibold">{result.score}/30</span>
+              </div>
+              <div className="mb-4">
+                <div className="flex justify-between text-xs text-muted-foreground mb-2">
+                  <span>Progress to next level</span>
+                  <span>{Math.round(calculateProgressToNextLevel(result.score, result.levelId))}%</span>
+                </div>
+                <Progress 
+                  value={calculateProgressToNextLevel(result.score, result.levelId)} 
+                  className="h-2"
+                />
               </div>
             </div>
             <p id="level-blurb" className="text-foreground leading-relaxed text-center">
