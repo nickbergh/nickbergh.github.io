@@ -127,9 +127,19 @@ const Results = () => {
                 />
               </div>
             </div>
-            <p id="level-blurb" className="text-foreground leading-relaxed text-center">
-              {result.levelBlurb}
-            </p>
+            <div id="level-blurb" className="text-foreground leading-relaxed text-center">
+              {result.levelBlurb.split('\n').map((line, index) => {
+                if (line.trim().startsWith('•')) {
+                  return (
+                    <div key={index} className="flex items-start justify-center mb-2">
+                      <span className="mr-2">•</span>
+                      <span className="text-left">{line.trim().substring(1).trim()}</span>
+                    </div>
+                  );
+                }
+                return <p key={index} className="mb-2">{line}</p>;
+              })}
+            </div>
           </div>
 
           {/* Archetype Results */}
