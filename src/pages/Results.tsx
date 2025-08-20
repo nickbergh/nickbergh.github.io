@@ -137,7 +137,7 @@ const Results = () => {
                     </div>
                   );
                 }
-                return <p key={index} className="mb-2">{line}</p>;
+                return <p key={index} className="mb-2 text-left">{line}</p>;
               })}
             </div>
           </div>
