@@ -133,7 +133,7 @@ const Results = () => {
                   return (
                     <div key={index} className="flex items-start justify-center mb-2">
                       <span className="mr-2">•</span>
-                      <span className="text-left">{line.trim().substring(1).trim()}</span>
+                      <span className="text-right">{line.trim().substring(1).trim()}</span>
                     </div>
                   );
                 }
@@ -152,7 +152,7 @@ const Results = () => {
                 {result.archetype.label}
               </h2>
             </div>
-            <p id="arch-body" className="text-foreground leading-relaxed text-center">
+            <p id="arch-body" className="text-foreground leading-relaxed text-right">
               {result.archetype.body}
             </p>
           </div>
