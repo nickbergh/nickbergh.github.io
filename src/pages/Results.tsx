@@ -36,7 +36,8 @@ const Results = () => {
       return "Max level reached";
     }
     
-    return `${score}/${nextLevel.minScore} to reach ${nextLevel.name}`;
+    const pointsNeeded = nextLevel.minScore - score;
+    return `Leveling Up | ${pointsNeeded} points needed to reach ${nextLevel.name}`;
   };
 
   // Debug logging
@@ -117,7 +118,7 @@ const Results = () => {
               </div>
               <div className="mb-4">
                 <div className="flex justify-between text-xs text-muted-foreground mb-2">
-                  <span>Progress to next level - {getProgressText(result.score, result.levelId)}</span>
+                  <span>{getProgressText(result.score, result.levelId)}</span>
                   <span>{Math.round(calculateProgressToNextLevel(result.score, result.levelId))}%</span>
                 </div>
                 <Progress 
