@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { QuizResult } from '@/types/quiz';
 import { levels, archetypes, momentumText } from '@/data/quizData';
-import { ArrowRight, RotateCcw } from 'lucide-react';
+import { ArrowRight, RotateCcw, Briefcase, Search, TrendingUp, BarChart3 } from 'lucide-react';
 import { useCircleEvents } from '@/hooks/useCircleEvents';
 import EventCard from '@/components/EventCard';
 
@@ -38,6 +38,17 @@ const Results = () => {
     
     const pointsNeeded = nextLevel.minScore - score;
     return `Leveling Up | ${pointsNeeded} points needed to reach ${nextLevel.name}`;
+  };
+
+  // Get archetype icon
+  const getArchetypeIcon = (archetypeKey: string) => {
+    const iconMap = {
+      'tech_aware_entrepreneur': Briefcase,
+      'curious_career_pivoter': Search,
+      'self_growth_seeker': TrendingUp,
+      'career_driven_decision_maker': BarChart3
+    };
+    return iconMap[archetypeKey as keyof typeof iconMap] || Search;
   };
 
   // Debug logging
@@ -146,7 +157,10 @@ const Results = () => {
           <div className="card-elevated p-8 rounded-xl">
             <div className="text-center mb-6">
               <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🎯</span>
+                {(() => {
+                  const IconComponent = getArchetypeIcon(result.archetype.key);
+                  return <IconComponent className="w-8 h-8 text-primary" />;
+                })()}
               </div>
               <h2 id="arch-label" className="text-2xl font-bold text-foreground mb-2">
                 {result.archetype.label}
