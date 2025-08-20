@@ -28,6 +28,17 @@ const Results = () => {
     return Math.min(100, Math.max(0, (progressInCurrentLevel / totalPointsToNextLevel) * 100));
   };
 
+  // Get progress text for next level
+  const getProgressText = (score: number, currentLevelId: number) => {
+    const nextLevel = levels.find(level => level.id === currentLevelId + 1);
+    
+    if (!nextLevel) {
+      return "Max level reached";
+    }
+    
+    return `${score}/${nextLevel.minScore} to reach ${nextLevel.name}`;
+  };
+
   // Debug logging
   console.log('Events debug:', { events, eventsLoading, eventsError, eventsLength: events.length });
 
@@ -106,7 +117,7 @@ const Results = () => {
               </div>
               <div className="mb-4">
                 <div className="flex justify-between text-xs text-muted-foreground mb-2">
-                  <span>Progress to next level</span>
+                  <span>Progress to next level - {getProgressText(result.score, result.levelId)}</span>
                   <span>{Math.round(calculateProgressToNextLevel(result.score, result.levelId))}%</span>
                 </div>
                 <Progress 
