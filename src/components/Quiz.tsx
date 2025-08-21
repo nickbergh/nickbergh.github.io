@@ -19,24 +19,35 @@ export const Quiz = () => {
 
   // Check if running in iframe
   const isInIframe = window !== window.parent;
+  
+  console.log('Quiz loaded - isInIframe:', isInIframe);
 
   // Send iframe height to parent for responsive sizing
   useEffect(() => {
-    if (!isInIframe) return;
+    if (!isInIframe) {
+      console.log('Not in iframe, skipping postMessage setup');
+      return;
+    }
+
+    console.log('Setting up iframe communication');
 
     const sendHeight = () => {
       const height = document.documentElement.scrollHeight;
+      console.log('Sending height to parent:', height);
       window.parent.postMessage({
         type: 'RESIZE_IFRAME',
         height: height
-      }, 'https://maiven-leveling-archetype-quiz.lovable.app');
+      }, '*');
     };
 
     // Send initial height
     sendHeight();
 
     // Send height on resize
-    const resizeObserver = new ResizeObserver(sendHeight);
+    const resizeObserver = new ResizeObserver(() => {
+      console.log('Height changed, sending new height');
+      sendHeight();
+    });
     resizeObserver.observe(document.documentElement);
 
     return () => resizeObserver.disconnect();
@@ -147,11 +158,16 @@ export const Quiz = () => {
 
     // Send message to parent window if in iframe
     if (isInIframe) {
+      console.log('Sending quiz completion message to parent:', {
+        type: 'QUIZ_COMPLETED',
+        level: level.id,
+        result: result
+      });
       window.parent.postMessage({
         type: 'QUIZ_COMPLETED',
         level: level.id,
         result: result
-      }, 'https://maiven-leveling-archetype-quiz.lovable.app');
+      }, '*');
       return; // Don't navigate when in iframe, let parent handle it
     }
 
