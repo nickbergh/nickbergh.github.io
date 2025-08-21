@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -16,6 +16,31 @@ export const Quiz = () => {
   const [answers, setAnswers] = useState<QuizAnswers>({});
   const [email, setEmail] = useState('');
   const [selectedArchetype, setSelectedArchetype] = useState('');
+
+  // Check if running in iframe
+  const isInIframe = window !== window.parent;
+
+  // Send iframe height to parent for responsive sizing
+  useEffect(() => {
+    if (!isInIframe) return;
+
+    const sendHeight = () => {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({
+        type: 'RESIZE_IFRAME',
+        height: height
+      }, 'https://maiven-leveling-archetype-quiz.lovable.app');
+    };
+
+    // Send initial height
+    sendHeight();
+
+    // Send height on resize
+    const resizeObserver = new ResizeObserver(sendHeight);
+    resizeObserver.observe(document.documentElement);
+
+    return () => resizeObserver.disconnect();
+  }, [isInIframe, currentStep]);
 
   const totalSteps = quizQuestions.length + 2; // +1 for archetype, +1 for email
   const isLastQuizStep = currentStep === quizQuestions.length;
@@ -120,7 +145,17 @@ export const Quiz = () => {
       console.log('Analytics webhook failed:', error);
     }
 
-    // Redirect to results
+    // Send message to parent window if in iframe
+    if (isInIframe) {
+      window.parent.postMessage({
+        type: 'QUIZ_COMPLETED',
+        level: level.id,
+        result: result
+      }, 'https://maiven-leveling-archetype-quiz.lovable.app');
+      return; // Don't navigate when in iframe, let parent handle it
+    }
+
+    // Redirect to results (only when not in iframe)
     navigate('/results');
   };
 
