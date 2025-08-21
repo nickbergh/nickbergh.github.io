@@ -147,7 +147,7 @@ const Results = () => {
           <div className="card-elevated p-8 rounded-xl">
             <div className="text-center mb-6">
               <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-primary" />
+                <Zap className="w-8 h-8 text-white" />
               </div>
               <h2 id="arch-label" className="text-2xl font-bold text-foreground mb-2">
                 {result.archetype.label}
