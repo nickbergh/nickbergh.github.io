@@ -17,27 +17,54 @@ export const Quiz = () => {
   const [email, setEmail] = useState('');
   const [selectedArchetype, setSelectedArchetype] = useState('');
 
-  // Check if running in iframe
+  // Check if running in iframe - multiple methods for debugging
   const isInIframe = window !== window.parent;
+  const isInIframeAlt = window.self !== window.top;
   
-  console.log('Quiz loaded - isInIframe:', isInIframe);
+  // Immediate console logs (these should show up right away)
+  console.log('=== QUIZ DEBUG INFO ===');
+  console.log('window !== window.parent:', window !== window.parent);
+  console.log('window.self !== window.top:', window.self !== window.top);
+  console.log('window.frameElement:', window.frameElement);
+  console.log('isInIframe:', isInIframe);
+  console.log('currentStep:', currentStep);
 
   // Send iframe height to parent for responsive sizing
   useEffect(() => {
+    console.log('useEffect running - isInIframe:', isInIframe);
+    
+    // Send a test message immediately
+    try {
+      console.log('Attempting to send test message to parent...');
+      window.parent.postMessage({
+        type: 'TEST_MESSAGE',
+        message: 'Quiz component mounted',
+        timestamp: Date.now()
+      }, '*');
+      console.log('Test message sent successfully');
+    } catch (error) {
+      console.error('Error sending test message:', error);
+    }
+
     if (!isInIframe) {
-      console.log('Not in iframe, skipping postMessage setup');
+      console.log('Not in iframe, skipping height tracking');
       return;
     }
 
-    console.log('Setting up iframe communication');
+    console.log('Setting up iframe height communication');
 
     const sendHeight = () => {
       const height = document.documentElement.scrollHeight;
       console.log('Sending height to parent:', height);
-      window.parent.postMessage({
-        type: 'RESIZE_IFRAME',
-        height: height
-      }, '*');
+      try {
+        window.parent.postMessage({
+          type: 'RESIZE_IFRAME',
+          height: height
+        }, '*');
+        console.log('Height message sent successfully');
+      } catch (error) {
+        console.error('Error sending height message:', error);
+      }
     };
 
     // Send initial height
@@ -48,6 +75,7 @@ export const Quiz = () => {
       console.log('Height changed, sending new height');
       sendHeight();
     });
+    resizeObserver.observe(document.documentElement);
     resizeObserver.observe(document.documentElement);
 
     return () => resizeObserver.disconnect();
