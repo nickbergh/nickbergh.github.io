@@ -76,7 +76,6 @@ export const Quiz = () => {
       sendHeight();
     });
     resizeObserver.observe(document.documentElement);
-    resizeObserver.observe(document.documentElement);
 
     return () => resizeObserver.disconnect();
   }, [isInIframe, currentStep]);
