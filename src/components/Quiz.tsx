@@ -77,6 +77,7 @@ export const Quiz = () => {
     });
     resizeObserver.observe(document.documentElement);
 
+    // Force rebuild - deployment fix
     return () => resizeObserver.disconnect();
   }, [isInIframe, currentStep]);
 
