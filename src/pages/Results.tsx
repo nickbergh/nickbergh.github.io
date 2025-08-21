@@ -181,9 +181,9 @@ const Results = () => {
             </Button>
             
             <Button variant="secondary" asChild>
-              <Link to="/">
+              <a href="https://www.maivencollective.com/">
                 Back to Home
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
