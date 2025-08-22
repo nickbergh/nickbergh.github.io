@@ -83,7 +83,7 @@ serve(async (req) => {
     };
 
     // Replace with your actual Klaviyo list ID for quiz completers
-    const listId = 'YOUR_QUIZ_LIST_ID'; // You'll need to update this with your actual list ID
+    const listId = 'RDLrYp'; // You'll need to update this with your actual list ID
 
     try {
       const listResponse = await fetch(`https://a.klaviyo.com/api/lists/${listId}/relationships/profiles/`, {
