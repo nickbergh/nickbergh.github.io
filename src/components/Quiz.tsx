@@ -148,40 +148,25 @@ export const Quiz = () => {
     // Store in sessionStorage for immediate results page access
     sessionStorage.setItem('maiven_quiz_result', JSON.stringify(result));
 
-    // Save to Supabase database
+    // Submit to Klaviyo
     try {
-      const { error } = await supabase
-        .from('quiz_results')
-        .insert({
+      const { data, error } = await supabase.functions.invoke('submit-to-klaviyo', {
+        body: {
           email,
           score,
-          level_id: level.id,
-          level_name: level.name,
-          level_title: level.title,
-          level_blurb: level.blurb,
-          level_hub_url: level.hubUrl,
-          archetype_key: archetype.key,
-          archetype_label: archetype.label,
-          archetype_body: archetype.body,
-          answers: answers
-        });
+          level,
+          archetype,
+          answers
+        }
+      });
 
       if (error) {
-        console.error('Error saving quiz result to database:', error);
+        console.error('Error submitting to Klaviyo:', error);
+      } else {
+        console.log('Successfully submitted to Klaviyo:', data);
       }
     } catch (error) {
-      console.error('Database save failed:', error);
-    }
-
-    // Optional: Send to webhook for analytics
-    try {
-      fetch('https://example.com/quiz-webhook', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(result)
-      });
-    } catch (error) {
-      console.log('Analytics webhook failed:', error);
+      console.error('Klaviyo submission failed:', error);
     }
 
     // Send message to parent window if in iframe

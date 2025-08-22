@@ -1,1 +1,4 @@
 project_id = "mnfuhzczviyrutrhrvan"
+
+[functions.submit-to-klaviyo]
+verify_jwt = false
