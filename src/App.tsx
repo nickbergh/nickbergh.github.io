@@ -7,7 +7,7 @@ import Results from "./pages/Results";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
-  // DEPLOYMENT TEST - Force rebuild timestamp: 2025-08-21-18:43
+  // DEPLOYMENT TEST - Force rebuild timestamp: 2025-08-22
   console.log('App component loaded - deployment test');
   
   return (
