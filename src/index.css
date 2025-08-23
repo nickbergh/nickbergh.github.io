@@ -129,6 +129,11 @@
     background: var(--gradient-hero);
   }
 
+  /* Header gradient background - purple to teal gradient matching website */
+  .header-gradient {
+    background: linear-gradient(135deg, #755BAB 0%, #003242 100%);
+  }
+
   /* Card with clean styling - white background with custom border */
   .card-elevated {
     background: #ffffff; /* White background */
