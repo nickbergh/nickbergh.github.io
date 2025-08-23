@@ -197,7 +197,7 @@ const Results = () => {
                 <EventCard key={event.id} event={event} />
               ))}
             </div>
-            <div className="text-center">
+            <div className="text-center mb-8">
               <Button variant="outline" asChild>
                 <a href="#" target="_blank" rel="noopener noreferrer">
                   Join the Community to Access the Events
