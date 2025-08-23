@@ -303,7 +303,7 @@ export const Quiz = () => {
           <h1 className="font-heading text-4xl text-foreground">Find Your AI Readiness Level</h1>
           <p className="text-muted-foreground mt-4 text-lg">
             <strong>Take the Quiz to Find Your AI Readiness Level + Archetype.</strong>
-            <br /><br />
+            <br />
             Get personalized insights into your AI journey and connect with a community of growth-minded women transforming their work and lives.
           </p>
         </header>
