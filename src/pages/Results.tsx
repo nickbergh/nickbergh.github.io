@@ -87,7 +87,7 @@ const Results = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background py-12 px-4">
+    <div className="min-h-screen bg-background py-12 px-4 pb-10">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
