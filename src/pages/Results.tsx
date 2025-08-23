@@ -180,34 +180,6 @@ const Results = () => {
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="text-center space-y-4">
-          <Button 
-            id="level-cta"
-            asChild
-            className="bg-secondary text-secondary-foreground hover:bg-secondary-hover border-0 rounded-full text-lg px-8 py-6"
-          >
-            <a href={result.levelHubUrl}>
-              Explore your {result.levelTitle} hub
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-          </Button>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button variant="outline" asChild>
-              <Link to="/quiz">
-                <RotateCcw className="mr-2 w-4 h-4" />
-                Retake Assessment
-              </Link>
-            </Button>
-            
-            <Button variant="secondary" asChild>
-              <a href="https://www.maivencollective.com/">
-                Back to Home
-              </a>
-            </Button>
-          </div>
-        </div>
 
         {/* Upcoming Community Events */}
         {events.length > 0 && (
@@ -250,6 +222,35 @@ const Results = () => {
             </p>
           </div>
         )}
+
+        {/* Action Buttons */}
+        <div className="mt-16 text-center space-y-4">
+          <Button 
+            id="level-cta"
+            asChild
+            className="bg-secondary text-secondary-foreground hover:bg-secondary-hover border-0 rounded-full text-lg px-8 py-6"
+          >
+            <a href={result.levelHubUrl}>
+              Explore your {result.levelTitle} hub
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+          </Button>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <Button variant="outline" asChild>
+              <Link to="/quiz">
+                <RotateCcw className="mr-2 w-4 h-4" />
+                Retake Assessment
+              </Link>
+            </Button>
+            
+            <Button variant="secondary" asChild>
+              <a href="https://www.maivencollective.com/">
+                Back to Home
+              </a>
+            </Button>
+          </div>
+        </div>
 
       </div>
     </div>
