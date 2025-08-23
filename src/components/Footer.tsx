@@ -16,9 +16,9 @@ const Footer = () => {
   return (
     <footer className="bg-teal-700 text-white">
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
-          {/* Left Section - Brand and Description */}
+          {/* Left Section - Brand, Description and Navigation */}
           <div className="lg:col-span-1">
             <h2 className="text-yellow-400 font-heading text-3xl md:text-4xl font-light mb-6 tracking-wide">
               THE MAIVEN COLLECTIVE
@@ -27,6 +27,34 @@ const Footer = () => {
               Building the future of AI through community, collaboration, and collective intelligence. 
               Join thousands of professionals transforming their careers with artificial intelligence.
             </p>
+            
+            {/* Navigation Links */}
+            <div className="flex flex-wrap gap-6 mb-6">
+              <a 
+                href="https://www.maivencollective.com/about" 
+                className="text-white/80 hover:text-white transition-colors font-poppins"
+              >
+                About Us
+              </a>
+              <a 
+                href="https://www.maivencollective.com/pricing" 
+                className="text-white/80 hover:text-white transition-colors font-poppins"
+              >
+                Pricing
+              </a>
+              <a 
+                href="https://www.maivencollective.com/contact" 
+                className="text-white/80 hover:text-white transition-colors font-poppins"
+              >
+                Contact
+              </a>
+              <a 
+                href="https://www.maivencollective.com/events" 
+                className="text-white/80 hover:text-white transition-colors font-poppins"
+              >
+                Events
+              </a>
+            </div>
             
             {/* Social Links */}
             <div className="flex space-x-4">
@@ -48,70 +76,6 @@ const Footer = () => {
               >
                 <Linkedin className="h-6 w-6" />
               </a>
-            </div>
-          </div>
-
-          {/* Middle Section - Navigation */}
-          <div className="lg:col-span-1">
-            <div className="grid grid-cols-2 gap-8">
-              <div>
-                <h3 className="font-poppins font-semibold text-lg mb-4">Company</h3>
-                <ul className="space-y-3">
-                  <li>
-                    <a 
-                      href="https://www.maivencollective.com/about" 
-                      className="text-white/80 hover:text-white transition-colors font-poppins"
-                    >
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://www.maivencollective.com/pricing" 
-                      className="text-white/80 hover:text-white transition-colors font-poppins"
-                    >
-                      Pricing
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://www.maivencollective.com/contact" 
-                      className="text-white/80 hover:text-white transition-colors font-poppins"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-poppins font-semibold text-lg mb-4">Community</h3>
-                <ul className="space-y-3">
-                  <li>
-                    <a 
-                      href="https://www.maivencollective.com/events" 
-                      className="text-white/80 hover:text-white transition-colors font-poppins"
-                    >
-                      Events
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://www.maivencollective.com/resources" 
-                      className="text-white/80 hover:text-white transition-colors font-poppins"
-                    >
-                      Resources
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://www.maivencollective.com/blog" 
-                      className="text-white/80 hover:text-white transition-colors font-poppins"
-                    >
-                      Blog
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
 
