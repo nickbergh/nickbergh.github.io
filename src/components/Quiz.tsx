@@ -148,6 +148,33 @@ export const Quiz = () => {
     // Store in sessionStorage for immediate results page access
     sessionStorage.setItem('maiven_quiz_result', JSON.stringify(result));
 
+    // Store in Supabase database
+    try {
+      const { error: supabaseError } = await supabase
+        .from('quiz_results')
+        .insert({
+          score,
+          level_id: level.id,
+          level_name: level.name,
+          level_title: level.title,
+          level_blurb: level.blurb,
+          level_hub_url: level.hubUrl,
+          archetype_key: archetype.key,
+          archetype_label: archetype.label,
+          archetype_body: archetype.body,
+          email,
+          answers
+        });
+
+      if (supabaseError) {
+        console.error('Error storing in Supabase:', supabaseError);
+      } else {
+        console.log('Successfully stored in Supabase database');
+      }
+    } catch (error) {
+      console.error('Supabase storage failed:', error);
+    }
+
     // Submit to Klaviyo
     try {
       const { data, error } = await supabase.functions.invoke('submit-to-klaviyo', {
