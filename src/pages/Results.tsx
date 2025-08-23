@@ -159,6 +159,27 @@ const Results = () => {
           </div>
         </div>
 
+        {/* Additional Info */}
+        <div className="mt-8 mb-8 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h3 className="text-xl font-semibold text-foreground mb-4">
+              Ready to accelerate your AI journey?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Join thousands of women who are transforming their work and lives with AI. 
+              Connect with your community and unlock your potential.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="outline">
+                Join the Community
+              </Button>
+              <Button variant="ghost">
+                Learn More About Maiven
+              </Button>
+            </div>
+          </div>
+        </div>
+
         {/* Action Buttons */}
         <div className="text-center space-y-4">
           <Button 
@@ -230,26 +251,6 @@ const Results = () => {
           </div>
         )}
 
-        {/* Additional Info */}
-        <div className="mt-16 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="text-xl font-semibold text-foreground mb-4">
-              Ready to accelerate your AI journey?
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Join thousands of women who are transforming their work and lives with AI. 
-              Connect with your community and unlock your potential.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline">
-                Join the Community
-              </Button>
-              <Button variant="ghost">
-                Learn More About Maiven
-              </Button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
