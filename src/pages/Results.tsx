@@ -224,7 +224,7 @@ const Results = () => {
         )}
 
         {/* Action Buttons */}
-        <div className="mt-16 text-center space-y-4">
+        <div className="mt-16 text-center space-y-4 hidden">
           <Button 
             id="level-cta"
             asChild
