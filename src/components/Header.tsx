@@ -45,8 +45,8 @@ const Header = () => {
                 Contact
               </a>
               <Button 
-                variant="accent" 
-                className="bg-purple-600 text-white hover:bg-purple-700 px-6 py-2 rounded-full font-poppins"
+                variant="secondary" 
+                className="px-6 py-2 font-poppins"
                 asChild
               >
                 <a href="https://www.maivencollective.com/login">
@@ -94,8 +94,8 @@ const Header = () => {
               Contact
             </a>
             <Button 
-              variant="accent" 
-              className="w-full bg-purple-600 text-white hover:bg-purple-700 rounded-full font-poppins"
+              variant="secondary" 
+              className="w-full font-poppins"
               asChild
             >
               <a href="https://www.maivencollective.com/login">
