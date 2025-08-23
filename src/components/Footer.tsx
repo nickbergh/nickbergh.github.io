@@ -23,7 +23,7 @@ const Footer = () => {
             <img 
               src="/lovable-uploads/e5d51b56-8563-4b2e-a77f-30ba78324129.png" 
               alt="The Maiven Collective Logo" 
-              className="h-12 md:h-16 w-auto mb-6"
+              className="h-6 md:h-8 w-auto mb-6"
             />
             <p className="text-white/90 font-poppins leading-relaxed mb-6">
               Building the future of AI through community, collaboration, and collective intelligence. 
