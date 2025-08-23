@@ -20,9 +20,11 @@ const Footer = () => {
           
           {/* Left Section - Brand, Description and Navigation */}
           <div className="lg:col-span-1">
-            <h2 className="text-yellow-400 font-heading text-3xl md:text-4xl font-light mb-6 tracking-wide">
-              THE MAIVEN COLLECTIVE
-            </h2>
+            <img 
+              src="/lovable-uploads/e5d51b56-8563-4b2e-a77f-30ba78324129.png" 
+              alt="The Maiven Collective Logo" 
+              className="h-12 md:h-16 w-auto mb-6"
+            />
             <p className="text-white/90 font-poppins leading-relaxed mb-6">
               Building the future of AI through community, collaboration, and collective intelligence. 
               Join thousands of professionals transforming their careers with artificial intelligence.
