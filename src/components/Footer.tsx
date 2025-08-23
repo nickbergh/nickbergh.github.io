@@ -89,18 +89,19 @@ const Footer = () => {
             <p className="text-white/80 font-poppins mb-6">
               Get the latest AI insights, event announcements, and community updates delivered to your inbox.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
               <Input
                 type="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="bg-white text-gray-900 border-0 rounded-full"
+                className="bg-white text-gray-900 border-0 rounded-full flex-1"
               />
               <Button 
                 type="submit"
-                className="w-full bg-yellow-400 text-teal-700 hover:bg-yellow-300 rounded-full font-poppins font-semibold"
+                variant="secondary"
+                className="font-poppins px-6"
               >
                 Subscribe
               </Button>
