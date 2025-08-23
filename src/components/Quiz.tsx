@@ -299,6 +299,10 @@ export const Quiz = () => {
   return (
     <div className="min-h-screen bg-background py-8 px-4">
       <div className="max-w-3xl mx-auto">
+        <header className="text-center mb-8">
+          <h1 className="font-heading text-4xl text-foreground">Find Your AI Readiness Level</h1>
+        </header>
+        
         <QuizProgress 
           currentStep={currentStep + 1} 
           totalSteps={totalSteps}
