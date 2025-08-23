@@ -64,7 +64,8 @@ const Footer = () => {
                 href="https://instagram.com/maivencollective" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white hover:text-yellow-400 transition-colors"
+                className="transition-colors"
+                style={{ color: '#F1F493' }}
                 aria-label="Follow us on Instagram"
               >
                 <Instagram className="h-6 w-6" />
@@ -73,7 +74,8 @@ const Footer = () => {
                 href="https://linkedin.com/company/maivencollective" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white hover:text-yellow-400 transition-colors"
+                className="transition-colors"
+                style={{ color: '#F1F493' }}
                 aria-label="Follow us on LinkedIn"
               >
                 <Linkedin className="h-6 w-6" />
