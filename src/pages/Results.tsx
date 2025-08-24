@@ -182,8 +182,8 @@ const Results = () => {
               {events.map(event => <EventCard key={event.id} event={event} />)}
             </div>
             <div className="text-center mb-8">
-              <Button variant="outline" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+              <Button asChild>
+                <a href="https://www.maivencollective.com/pricing" target="_blank" rel="noopener noreferrer">
                   Join the Community to Access the Events
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
