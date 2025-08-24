@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 import { CircleEvent } from '@/types/events';
 
 interface EventCardProps {
@@ -27,6 +26,15 @@ const EventCard = ({ event }: EventCardProps) => {
     });
   };
 
+  const getSpeakerInfo = (eventId: string) => {
+    // Map of event IDs to speaker information
+    const speakers: Record<string, string> = {
+      'intro-automations-aug28': 'Sarah Chen, Automation Expert',
+      'ai-families-sep3': 'Dr. Emily Rodriguez, AI Education Specialist',
+    };
+    return speakers[eventId];
+  };
+
   return (
     <Card className="h-full flex flex-col">
       <CardHeader>
@@ -48,24 +56,15 @@ const EventCard = ({ event }: EventCardProps) => {
         )}
       </CardHeader>
       <CardContent className="flex-1 flex flex-col">
-        <CardDescription className="flex-1 line-clamp-3 mb-4">
+        <CardDescription className="flex-1 mb-4">
           {event.description}
         </CardDescription>
-        <Button 
-          variant="secondary" 
-          className="w-full"
-          asChild
-        >
-          <a 
-            href={event.url || '#'} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2"
-          >
-            View Event
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </Button>
+        {getSpeakerInfo(event.id) && (
+          <div className="text-sm text-muted-foreground">
+            <span className="font-medium">Speaker: </span>
+            {getSpeakerInfo(event.id)}
+          </div>
+        )}
       </CardContent>
     </Card>
   );
