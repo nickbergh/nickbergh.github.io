@@ -17,11 +17,13 @@ const Header = () => {
           <div className="flex items-center justify-between">
             {/* Logo/Brand */}
             <div className="flex-shrink-0">
-              <img 
-                src="/lovable-uploads/46108473-47f8-4bf7-923b-127566f6b066.png" 
-                alt="Maiven Collective Logo" 
-                className="h-8 md:h-10 w-auto"
-              />
+              <a href="https://www.maivencollective.com">
+                <img 
+                  src="/lovable-uploads/46108473-47f8-4bf7-923b-127566f6b066.png" 
+                  alt="Maiven Collective Logo" 
+                  className="h-8 md:h-10 w-auto"
+                />
+              </a>
             </div>
 
             {/* Desktop Navigation */}
