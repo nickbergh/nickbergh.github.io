@@ -51,7 +51,7 @@ const EventCard = ({ event }: EventCardProps) => {
         {event.location && (
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
             <MapPin className="w-4 h-4" />
-            <span>{event.location}</span>
+            <span>{event.location.replace(/\s*-\s*maiven collective/i, "")}</span>
           </div>
         )}
       </CardHeader>
