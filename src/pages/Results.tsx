@@ -158,7 +158,7 @@ const Results = () => {
             </h3>
             <p className="text-muted-foreground mb-6">Whether you're a solopreneur curious about automation, a tech-savvy founder looking to stay ahead, or someone taking their first steps into AI, you belong here. Join the community to start leveling up</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline">
+              <Button>
                 Join the Community
               </Button>
               <Button variant="ghost">
