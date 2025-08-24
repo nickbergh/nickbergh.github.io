@@ -59,12 +59,6 @@ const EventCard = ({ event }: EventCardProps) => {
         <CardDescription className="flex-1 mb-4">
           {event.description}
         </CardDescription>
-        {getSpeakerInfo(event.id) && (
-          <div className="text-sm text-muted-foreground">
-            <span className="font-medium">Speaker: </span>
-            {getSpeakerInfo(event.id)}
-          </div>
-        )}
       </CardContent>
     </Card>
   );
