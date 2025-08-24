@@ -32,7 +32,7 @@ const Footer = () => {
             </p>
             
             {/* Navigation Links */}
-            <div className="flex flex-wrap gap-6 mb-6">
+            <div className="flex flex-wrap gap-6 mb-6 hidden">
               <a 
                 href="https://www.maivencollective.com/about" 
                 className="text-white/80 hover:text-white transition-colors font-poppins"
