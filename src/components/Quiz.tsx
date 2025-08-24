@@ -301,7 +301,7 @@ export const Quiz = () => {
       <div className="max-w-3xl mx-auto">
         <header className="text-center mb-8">
           <h1 className="font-heading text-4xl text-foreground">Find Your AI Readiness Level</h1>
-          <p className="text-primary mt-8 mb-20 text-base">
+          <p className="text-primary mt-8 mb-32 text-base">
             <strong>Take the Quiz to Find Your AI Readiness Level + Archetype.</strong>
             <br />
             Get personalized insights into your AI journey and connect with a community of growth-minded women transforming their work and lives.
