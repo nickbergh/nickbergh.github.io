@@ -72,7 +72,7 @@ const Footer = () => {
                 <Instagram className="h-6 w-6" />
               </a>
               <a 
-                href="https://linkedin.com/company/maivencollective" 
+                href="https://www.linkedin.com/company/maiven-collective" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-colors"
