@@ -26,7 +26,7 @@ const Footer = () => {
               className="h-6 md:h-8 w-auto mb-6"
             />
             <p className="text-white/90 font-poppins leading-relaxed mb-6">
-              Maiven is where ambitious women don't just learn AI. They shape it, bend it, and make it work for their lives. We're the space between curiosity and capability, where experimenting isn't just allowed, it's celebrated.
+              Maiven is where ambitious women don't just learn AI. They shape it, bend it, and make it work for their lives.
             </p>
             
             {/* Navigation Links */}
