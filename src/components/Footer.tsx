@@ -26,8 +26,7 @@ const Footer = () => {
               className="h-6 md:h-8 w-auto mb-6"
             />
             <p className="text-white/90 font-poppins leading-relaxed mb-6">
-              Building the future of AI through community, collaboration, and collective intelligence. 
-              Join thousands of professionals transforming their careers with artificial intelligence.
+              Maiven is where ambitious women don't just learn AI. They shape it, bend it, and make it work for their lives. We're the space between curiosity and capability, where experimenting isn't just allowed, it's celebrated.
             </p>
             
             {/* Navigation Links */}
