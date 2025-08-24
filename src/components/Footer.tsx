@@ -118,7 +118,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-6">
               <a 
-                href="https://www.maivencollective.com/privacy" 
+                href="https://www.maivencollective.com/privacy-policy" 
                 className="text-white/60 hover:text-white transition-colors font-poppins text-sm"
               >
                 Privacy Policy
