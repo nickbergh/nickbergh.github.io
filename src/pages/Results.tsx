@@ -157,14 +157,9 @@ const Results = () => {
               Ready to accelerate your AI journey?
             </h3>
             <p className="text-muted-foreground mb-6">Whether you're a solopreneur curious about automation, a tech-savvy founder looking to stay ahead, or someone taking their first steps into AI, you belong here. Join the community to start leveling up</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button>
                 Join the Community
-              </Button>
-              <Button variant="outline" asChild>
-                <a href="https://www.maivencollective.com/" target="_blank" rel="noopener noreferrer">
-                  Learn More About Maiven
-                </a>
               </Button>
             </div>
           </div>
