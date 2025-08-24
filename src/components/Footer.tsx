@@ -62,7 +62,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex space-x-4">
               <a 
-                href="https://instagram.com/maivencollective" 
+                href="https://instagram.com/maiven_collective" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-colors"
