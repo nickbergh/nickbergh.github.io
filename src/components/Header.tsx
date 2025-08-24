@@ -27,7 +27,7 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden">
               <a 
                 href="https://www.maivencollective.com/about" 
                 className="text-white hover:text-white/80 transition-colors font-poppins"
