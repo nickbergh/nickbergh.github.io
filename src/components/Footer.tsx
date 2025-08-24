@@ -83,7 +83,7 @@ const Footer = () => {
           </div>
 
           {/* Right Section - Newsletter */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 hidden">
             <h3 className="font-poppins font-semibold text-lg mb-4">Stay Updated</h3>
             <p className="text-white/80 font-poppins mb-6">
               Get the latest AI insights, event announcements, and community updates delivered to your inbox.
