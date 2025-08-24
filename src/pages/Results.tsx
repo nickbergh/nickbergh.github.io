@@ -161,8 +161,10 @@ const Results = () => {
               <Button>
                 Join the Community
               </Button>
-              <Button variant="ghost">
-                Learn More About Maiven
+              <Button variant="outline" asChild>
+                <a href="https://www.maivencollective.com/" target="_blank" rel="noopener noreferrer">
+                  Learn More About Maiven
+                </a>
               </Button>
             </div>
           </div>
