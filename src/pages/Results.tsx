@@ -176,7 +176,7 @@ const Results = () => {
                 Upcoming Community Events
               </h3>
               <p className="text-muted-foreground">
-                Join your fellow AI enthusiasts at these exclusive events
+                Turn learning into leverage with our expert led workshops and discussion.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
