@@ -20,11 +20,13 @@ const Footer = () => {
           
           {/* Left Section - Brand, Description and Navigation */}
           <div className="lg:col-span-1">
-            <img 
-              src="/lovable-uploads/e5d51b56-8563-4b2e-a77f-30ba78324129.png" 
-              alt="The Maiven Collective Logo" 
-              className="h-6 md:h-8 w-auto mb-6"
-            />
+            <a href="https://www.maivencollective.com">
+              <img 
+                src="/lovable-uploads/e5d51b56-8563-4b2e-a77f-30ba78324129.png" 
+                alt="The Maiven Collective Logo" 
+                className="h-6 md:h-8 w-auto mb-6"
+              />
+            </a>
             <p className="text-white/90 font-poppins leading-relaxed mb-6">
               Maiven is where ambitious women don't just learn AI. They shape it, bend it, and make it work for their lives.
             </p>
