@@ -159,7 +159,7 @@ const Results = () => {
             <p className="text-muted-foreground mb-6">Whether you're a solopreneur curious about automation, a tech-savvy founder looking to stay ahead, or someone taking their first steps into AI, you belong here. Join the community to start leveling up</p>
             <div className="flex justify-center">
               <Button asChild>
-                <a href="https://www.maivencollective.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.maivencollective.com/pricing" target="_blank" rel="noopener noreferrer">
                   Join the Community
                 </a>
               </Button>
