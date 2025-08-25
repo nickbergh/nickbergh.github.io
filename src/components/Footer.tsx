@@ -124,7 +124,7 @@ const Footer = () => {
                 Privacy Policy
               </a>
               <a 
-                href="www.maivencollective.com/terms-of-use" 
+                href="https://www.maivencollective.com/terms-of-use" 
                 className="text-white/60 hover:text-white transition-colors font-poppins text-sm"
               >
                 Terms of Service
