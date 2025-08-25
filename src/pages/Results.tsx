@@ -183,7 +183,7 @@ const Results = () => {
             </div>
             <div className="text-center mb-8">
               <Button asChild>
-                <a href="https://www.maivencollective.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.maivencollective.com/pricing" target="_blank" rel="noopener noreferrer">
                   Join the Community to Access the Events
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
