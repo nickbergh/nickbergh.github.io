@@ -62,15 +62,42 @@ serve(async (req) => {
       body: JSON.stringify(profileData)
     });
 
-    if (!profileResponse.ok) {
+    let profileId;
+    
+    if (profileResponse.status === 409) {
+      // Profile already exists, extract the existing profile ID and update it
+      const errorResponse = await profileResponse.json();
+      profileId = errorResponse.errors[0].meta.duplicate_profile_id;
+      console.log('Profile already exists, updating existing profile:', profileId);
+      
+      // Update the existing profile
+      const updateResponse = await fetch(`https://a.klaviyo.com/api/profiles/${profileId}/`, {
+        method: 'PATCH',
+        headers: {
+          'Authorization': `Klaviyo-API-Key ${klaviyoApiKey}`,
+          'Content-Type': 'application/json',
+          'revision': '2024-10-15'
+        },
+        body: JSON.stringify(profileData)
+      });
+      
+      if (!updateResponse.ok) {
+        const updateError = await updateResponse.text();
+        console.error('Klaviyo profile update failed:', updateError);
+        throw new Error(`Klaviyo profile update failed: ${updateResponse.status}`);
+      }
+      
+      console.log('Profile updated successfully:', profileId);
+    } else if (!profileResponse.ok) {
       const error = await profileResponse.text();
       console.error('Klaviyo profile creation failed:', error);
       throw new Error(`Klaviyo profile creation failed: ${profileResponse.status}`);
+    } else {
+      // Profile created successfully
+      const profile = await profileResponse.json();
+      profileId = profile.data.id;
+      console.log('Profile created successfully:', profileId);
     }
-
-    const profile = await profileResponse.json();
-    const profileId = profile.data.id;
-    console.log('Profile created/updated:', profileId);
 
     // Add to main quiz completers list with tags
     const listData = {
