@@ -169,7 +169,7 @@ const Results = () => {
 
 
         {/* Upcoming Community Events */}
-        {events.length > 0 && <div className="mt-16">
+        {events.length > 0 && <div className="mt-16 hidden">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-foreground mb-2">
                 Upcoming Community Events
@@ -191,12 +191,12 @@ const Results = () => {
             </div>
           </div>}
 
-        {eventsLoading && <div className="mt-16 text-center">
+        {eventsLoading && <div className="mt-16 text-center hidden">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
             <p className="text-muted-foreground mt-2">Loading upcoming events...</p>
           </div>}
 
-        {eventsError && <div className="mt-16 text-center">
+        {eventsError && <div className="mt-16 text-center hidden">
             <p className="text-muted-foreground">
               Unable to load community events at this time.
             </p>
